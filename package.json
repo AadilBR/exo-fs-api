@@ -1,0 +1,7 @@
+{
+  "name": "exo-fs-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "AadilBR <aadil.iphone@gmail.com>",
+  "license": "MIT"
+}
