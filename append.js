@@ -2,7 +2,7 @@ const fs = require('fs')
 
 
 if (process.argv.length > process.argv[process.argv.length - 1] || process.argv.length < 5) {
-  console.log(chalk.red('Usage: node append.js file1.txt file2.txt file3.txt '))
+  console.log('Usage: node append.js filename1 filename2 ... ')
   process.exit(1)
 }
 

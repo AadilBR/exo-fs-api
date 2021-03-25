@@ -3,7 +3,7 @@ const fs = require('fs')
 
 // verifier la cmd line
 if (process.argv.length !== 3) {
-  console.log(`usage : node cat.js`)
+  console.log(`usage : node cat.js file name`)
   process.exit(1)
 }
 
@@ -14,6 +14,6 @@ if (!fs.existsSync(process.argv[2])) {
 }
 
 
-let txt = fs.readFileSync(`./test.txt`, 'utf-8')
+let txt = fs.readFileSync(process.argv[2], 'utf-8')
 console.log(txt)
 
