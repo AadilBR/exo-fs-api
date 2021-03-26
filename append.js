@@ -26,4 +26,3 @@ for (let i = 2; i < process.argv.length - 1; i++) {
 
 }
 
-console.log('Copy complete !')
