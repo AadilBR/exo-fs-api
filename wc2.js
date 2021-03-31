@@ -1,25 +1,25 @@
 const fs = require('fs')
 
+
 //Gestion de l'erreur si pas le bon nombre d'arguments.
-if (process.argv.length > 4 && process.argv.length < 5) {
-  console.log(`usage : node wc.js fileName option`)
+if (process.argv.length < 3 || process.argv.length > 4) {
+  console.log(`usage : node wc.js fileName [option]`)
   process.exit(1)
 }
 
+// Gestion d'erreur en cas d'option
+if (process.argv.length === 4) {
+
+  if (!(process.argv[3] == '-l' || process.argv[3] == '-w' || process.argv[3] == '-c')) {
+    console.log(`Error: if you choose an option you must pick only -l or -w or -c`)
+    process.exit(1)
+  }
+}
 //Gestion d'erreur si file.txt n'existe pas.
 if (!fs.existsSync(process.argv[2])) {
   console.log(`Error: ${process.argv[2]} do not exist`)
   process.exit(1)
 }
-// Gestion d'erreur en cas d'option
-if (process.argv.length === 4) {
-
-  if (!(process.argv[2] == '-l' || process.argv[2] == '-w' || process.argv[2] == '-c')) {
-    console.log(`Error: if you choose an option you must pick only -l or -w or -c`)
-    process.exit(1)
-  }
-}
-
 
 //Lire le fichier
 let txt = fs.readFileSync(process.argv[2], 'utf-8')
@@ -41,7 +41,7 @@ const characters = txt
 //console.log(`Nombres de caractères : ${characters.length}`)
 
 //ou sinon Afficher tout sur un seule ligne
-switch (process.argv[2]) {
+switch (process.argv[3]) {
   case '-l':
     console.log(`${lines.length} ${process.argv[2]}`)
     break

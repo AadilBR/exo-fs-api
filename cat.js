@@ -13,6 +13,13 @@ if (!fs.existsSync(process.argv[2])) {
   process.exit(1)
 }
 
+//Si il existe verifier que c'est un fichier et non un répertoire
+const stats = fs.statSync(process.argv[2])
+if (!stats.isFile()) {
+  console.log(`Error: ${process.argv[2]} is not a file`)
+  process.exit(1)
+}
+
 
 let txt = fs.readFileSync(process.argv[2], 'utf-8')
 console.log(txt)

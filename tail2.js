@@ -1,13 +1,26 @@
 const fs = require('fs')
+let shift = 2
 
 //Gestion de l'erreur si pas le bon nombre d'arguments.
-if (process.argv.length !== 3) {
-  console.log(`usage : node tail.js fileName`)
+if (process.argv.length < 3 || process.argv.length > 5) {
+  console.log(`usage : node tail2.js fileName [option + number]`)
   process.exit(1)
 }
 
+// Gestion d'erreur en cas d'option
+if (process.argv.length === 5) {
+
+  if ((process.argv[2] === '-n')) {
+    if (!isNaN(process.argv[3])) {
+      console.log(process.argv[3])
+      console.log(`Error: if you choose an option you must write it this way [-n number]`)
+      process.exit(01)
+    }
+  }
+}
 //Gestion de l'erreur si AmaFille.txt n'existe pas.
-if (!fs.existsSync(process.argv[2])) {
+if (!fs.existsSync(process.argv[4])) {
+  console.log(4)
   console.log(`Error: ${process.argv[2]} does not exist`)
   process.exit(1)
 }
