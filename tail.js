@@ -8,7 +8,7 @@ if (process.argv.length !== 3) {
 
 //Gestion de l'erreur si AmaFille.txt n'existe pas.
 if (!fs.existsSync(process.argv[2])) {
-  console.log(`Error: ${process.argv[2]} do not exist`)
+  console.log(`Error: ${process.argv[2]} does not exist`)
   process.exit(1)
 }
 

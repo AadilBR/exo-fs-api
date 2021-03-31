@@ -17,20 +17,20 @@ let txt = fs.readFileSync(process.argv[2], 'utf-8')
 
 
 //Commencer le traitement avant affichage
-const tab = txt.split('\n')
-//console.log(tab)
-const str = txt
-const tab2 = txt.split(' ')
+const lines = txt.split('\n')
+//console.log(lines)
+const words = txt.split(' ')
+const characters = txt
 
 //Affiche le nombre de lignes,
-//console.log(`Nombres de lignes : ${tab.length}`)
+//console.log(`Nombres de lignes : ${lines.length}`)
 
 //mots et 
-//console.log(`Nombres de mots : ${tab2.length}`)
+//console.log(`Nombres de mots : ${words.length}`)
 
 //caractères du fichier file.txt.
-//console.log(`Nombres de caractères : ${str.length}`)
+//console.log(`Nombres de caractères : ${characters.length}`)
 
 //Afficher tout sur un seule ligne
 
-console.log(`${tab.length}   ${tab2.length}   ${str.length}   ${process.argv[2]}`)
+console.log(`${lines.length}   ${words.length}   ${characters.length}   ${process.argv[2]}`)
